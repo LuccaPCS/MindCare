@@ -1,0 +1,11 @@
+.navbar {
+  width: auto;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+}
