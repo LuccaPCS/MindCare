@@ -1,9 +1,47 @@
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import CentralBox from "../features/CentralBox/centralbox";
 
 export default function LoginPage() {
-  const [inputEmail, setInputEmail] = useState(null);
-  const [inputPassword, setInputPassword] = useState(null);
+  const [inputEmail, setInputEmail] = useState("usuarioteste");
+  const [inputPassword, setInputPassword] = useState("123456");
+  const [isLoading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const onChangeEmail = (e) => {
+    setInputEmail(e.target.value);
+  };
+
+  const onChangePassword = (e) => {
+    setInputPassword(e.target.value);
+  };
+
+  async function handleLogin() {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`/users/${inputEmail}.json`);
+      if (!response.ok) {
+        setError("Usuário não encontrado.");
+        return;
+      }
+      const userData = await response.json();
+      if (!userData || inputPassword !== userData.password) {
+        const msg = userData
+          ? "Usuário e senha não conferem."
+          : "Usuário não encontrado.";
+        setError(msg);
+        return;
+      }
+      setError(null);
+      navigate("/dashboard");
+    } catch {
+      setError("Usuário não encontrado.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div
@@ -20,17 +58,22 @@ export default function LoginPage() {
             type="text"
             placeholder="Email"
             value={inputEmail}
-            onChange={(e) => setInputEmail(e.target.value)}
+            onChange={onChangeEmail}
           />
           <input
             type="text"
             placeholder="Senha"
             value={inputPassword}
-            onChange={(e) => setInputPassword(e.target.value)}
+            onChange={onChangePassword}
           />
-          <button onClick={() => {}}>Login</button>
+
+          <button onClick={handleLogin}>Login</button>
+
+          {isLoading && <div>Verificando credenciais...</div>}
+          {error && <div style={{ color: "red" }}>{error}</div>}
+
           <p>
-            Ainda não registrado? <a href="/signup">Registrar</a>
+            Ainda não registrado? <Link to="/signup">Registrar</Link>
           </p>
         </div>
       </CentralBox>
