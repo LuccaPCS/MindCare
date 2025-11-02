@@ -6,8 +6,6 @@ Lucca Pietro Camillo dos Santos
 
 Para a entrega do TP2, foram atendidas as seguintes histórias:
 
-## Sprint 1 - Cadastrar e autenticar usuário
-
 1. Cadastrar usuário
    - Criar tela de escolha do perfil de usuário (psicólogo ou paciente).
    - Criar componente com formulário de cadastramento para psicólogo.
@@ -15,4 +13,4 @@ Para a entrega do TP2, foram atendidas as seguintes histórias:
 2. Autenticar usuário
    - Criar componente de autenticação (login).
 
-O projeto referente à entrega do TP2 pode ser acessado na branch "TP2".
+**O projeto referente à entrega do TP2 pode ser acessado na branch "TP2".**
