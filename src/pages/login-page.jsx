@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import CentralBox from "../features/CentralBox/centralbox";
 
 export default function LoginPage() {
-  const [inputEmail, setInputEmail] = useState("usuarioteste");
+  const [inputEmail, setInputEmail] = useState("usuarioteste@gmail.com");
   const [inputPassword, setInputPassword] = useState("123456");
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -61,13 +61,15 @@ export default function LoginPage() {
             onChange={onChangeEmail}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Senha"
             value={inputPassword}
             onChange={onChangePassword}
           />
 
-          <button onClick={handleLogin}>Login</button>
+          <button onClick={handleLogin} disabled={isLoading}>
+            {isLoading ? "verificando..." : "Login"}
+          </button>
 
           {isLoading && <div>Verificando credenciais...</div>}
           {error && <div style={{ color: "red" }}>{error}</div>}

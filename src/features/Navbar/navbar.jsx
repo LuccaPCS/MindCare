@@ -5,7 +5,8 @@ export default function Navbar({ visibleLinks = [] }) {
   const NAV_LINKS = [
     { name: "Home", path: "/" },
     { name: "Login", path: "/login" },
-    { name: "Signup", path: "/signup" },
+    { name: "Client Signup", path: "/client-signup" },
+    { name: "Pro Signup", path: "/pro-signup" },
     { name: "Dashboard", path: "/dashboard" },
     { name: "Profile", path: "/profile" },
   ];

@@ -49,18 +49,23 @@ img {
   --background-white: rgb(255, 252, 240);
   --background-offwhite: rgb(242, 240, 229);
   --background-grey: rgb(183, 181, 172);
+  --main-green: rgb(160, 175, 84);
 
   background-color: var(--background-grey);
   background-image: url("./assets/logo-mash.svg");
   background-repeat: repeat;
   background-size: 300px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .app-container {
   background-color: var(--background-white);
-  height: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+h2 {
   padding: 1rem;
 }

@@ -1,0 +1,43 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  padding: 0 1rem 1rem 1rem;
+}
+
+/* new: stack each field's label and control */
+.formContainer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ensure labels sit above inputs */
+.formContainer label {
+  display: block;
+  margin-bottom: 0;
+}
+
+.formContainer input,
+.formContainer select {
+  width: 100%;
+  max-width: 300px;
+}
+
+.formContainer textarea {
+  resize: vertical;
+  min-height: 100px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.submitButton {
+  background-color: var(--main-green);
+  color: white;
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
