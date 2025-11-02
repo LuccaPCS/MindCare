@@ -6,16 +6,9 @@
   padding: 0 1rem 1rem 1rem;
 }
 
-/* new: stack each field's label and control */
 .formContainer > div {
   display: flex;
   flex-direction: column;
-}
-
-/* ensure labels sit above inputs */
-.formContainer label {
-  display: block;
-  margin-bottom: 0;
 }
 
 .formContainer input,
