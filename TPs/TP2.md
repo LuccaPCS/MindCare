@@ -13,4 +13,4 @@ Para a entrega do TP2, foram atendidas as seguintes histórias:
 2. Autenticar usuário
    - Criar componente de autenticação (login).
 
-**O projeto referente à entrega do TP2 pode ser acessado na branch "TP2".**
+**O projeto referente à entrega do TP2 consta na branch "TP2".**
