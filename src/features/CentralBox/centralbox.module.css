@@ -12,7 +12,7 @@
   justify-content: center;
   border-radius: 1rem 1rem 0 0;
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .boxcontent {
@@ -27,4 +27,47 @@
 
 .boxheader img {
   max-width: 400px;
+}
+
+.pickerContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.pickOne {
+  border: 1px solid;
+  background-color: var(--light-green);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pickOne:hover {
+  filter: brightness(0.8);
+}
+
+.pickTwo {
+  border: 1px solid;
+  background-color: var(--light-salmon);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pickTwo:hover {
+  filter: brightness(0.8);
+}
+
+img {
+  max-width: 150px;
+  margin-bottom: 1rem;
 }

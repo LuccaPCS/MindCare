@@ -1,5 +1,5 @@
 import styles from "./centralbox.module.css";
-import logo from "../../assets/logo-name-1.svg";
+import logo from "../../assets/logo-name-2.svg";
 
 export default function CentralBox({ children }) {
   return (

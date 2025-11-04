@@ -22,16 +22,6 @@ export default function ProSignupPage() {
 
   return (
     <>
-      <Navbar
-        visibleLinks={[
-          "Home",
-          "Login",
-          "Client Signup",
-          "Pro Signup",
-          "Dashboard",
-          "Profile",
-        ]}
-      />
       <h2>Cadastro de Profissional</h2>
       <div className={styles.formContainer}>
         <CommonFieldsForm formData={formData} handleChange={handleChange} />

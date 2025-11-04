@@ -20,17 +20,6 @@ export default function ClientSignupPage() {
 
   return (
     <>
-      <Navbar
-        visibleLinks={[
-          "Home",
-          "Login",
-          "Client Signup",
-          "Pro Signup",
-          "Dashboard",
-          "Profile",
-        ]}
-      />
-
       <h2>Cadastro de Cliente</h2>
       <div className={styles.formContainer}>
         <CommonFieldsForm formData={formData} handleChange={handleChange} />

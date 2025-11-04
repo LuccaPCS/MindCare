@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import CentralBox from "../features/CentralBox/centralbox";
 
 export default function LoginPage() {
-  const [inputEmail, setInputEmail] = useState("usuarioteste@gmail.com");
+  const [inputEmail, setInputEmail] = useState("usuarioteste");
   const [inputPassword, setInputPassword] = useState("123456");
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -18,6 +18,7 @@ export default function LoginPage() {
   };
 
   async function handleLogin() {
+    console.log("Tentando logar com: ", inputEmail, inputPassword);
     setLoading(true);
     setError(null);
     try {
@@ -46,7 +47,7 @@ export default function LoginPage() {
   return (
     <div
       style={{
-        height: "100%",
+        height: "90vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -75,7 +76,13 @@ export default function LoginPage() {
           {error && <div style={{ color: "red" }}>{error}</div>}
 
           <p>
-            Ainda não registrado? <Link to="/signup">Registrar</Link>
+            Ainda não registrado?{" "}
+            <Link
+              to="/choose-profile-signup"
+              style={{ color: "rgb(32, 94, 166)", fontWeight: 500 }}
+            >
+              Registrar
+            </Link>
           </p>
         </div>
       </CentralBox>
