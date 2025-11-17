@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Angela Martinez",
+    "especialidade": ["Cognitivo Comportamental", "Terapia de Casal"]
+  },
+  {
+    "name": "Bruno Silva",
+    "especialidade": ["Psicologia Infantil", "Terapia Familiar"]
+  },
+  {
+    "name": "Camila Souza",
+    "especialidade": [
+      "Psicologia Educacional",
+      "Terapia Cognitivo Comportamental"
+    ]
+  },
+  {
+    "name": "Daniela Costa",
+    "especialidade": ["Psicologia Organizacional", "Coaching"]
+  }
+]

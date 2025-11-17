@@ -6,27 +6,36 @@ import { Link } from "react-router-dom";
 
 export default function ChooseProfileSignup() {
   return (
-    <CentralBox>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          alignItems: "center",
-        }}
-      >
-        <p>Escolha um perfil para se registrar:</p>
-        <div className={styles.pickerContainer}>
-          <Link to="/pro-signup" className={styles.pickOne}>
-            <p>Terapeuta</p>
-            <img src={therapist} alt="Terapeuta" />
-          </Link>
-          <Link to="/client-signup" className={styles.pickTwo}>
-            <p>Cliente</p>
-            <img src={client} alt="Cliente" />
-          </Link>
+    <div
+      style={{
+        height: "90vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <CentralBox>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            alignItems: "center",
+          }}
+        >
+          <p>Escolha um perfil para se registrar:</p>
+          <div className={styles.pickerContainer}>
+            <Link to="/pro-signup" className={styles.pickOne}>
+              <p>Terapeuta</p>
+              <img src={therapist} alt="Terapeuta" />
+            </Link>
+            <Link to="/client-signup" className={styles.pickTwo}>
+              <p>Cliente</p>
+              <img src={client} alt="Cliente" />
+            </Link>
+          </div>
         </div>
-      </div>
-    </CentralBox>
+      </CentralBox>
+    </div>
   );
 }
