@@ -1,7 +1,8 @@
 {
   "name": "Daniel Oliveira",
   "email": "daniel@example.com",
-  "especialidade": ["Psicologia Organizacional", "Coaching"],
-  "experiencia": "Mestrado em Psicologia Organizacional pela Universidade de Brasília",
-  "apresentacao": "Olá! Sou Daniel Oliveira, psicólogo com 12 anos de experiência em psicologia organizacional e coaching. Ajudo profissionais e empresas a desenvolverem seu potencial e alcançarem seus objetivos de forma eficaz e sustentável."
+  "specialty": ["Psicologia Organizacional", "Coaching"],
+  "experience": "Mestrado em Psicologia Organizacional pela Universidade de Brasília",
+  "introduction": "Olá! Sou Daniel Oliveira, psicólogo com 12 anos de experiência em psicologia organizacional e coaching. Ajudo profissionais e empresas a desenvolverem seu potencial e alcançarem seus objetivos de forma eficaz e sustentável.",
+  "profilepic": "./profilepics/daniel1.jpg"
 }
