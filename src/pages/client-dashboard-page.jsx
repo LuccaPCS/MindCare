@@ -1,7 +1,8 @@
 import Navbar from "../features/Navbar/navbar.jsx";
 import { useState, useEffect } from "react";
+import ProCards from "../features/Card/pro-cards.jsx";
 
-export default function DashboardPage() {
+export default function ClientDashboardPage() {
   const [psychologists, setPsychologists] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -26,10 +27,23 @@ export default function DashboardPage() {
     fetchPsychologists();
   }, []);
 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <Navbar visibleLinks={["Login", "Profile"]} />
       <h2>Dashboard</h2>
+      <ul>
+        {psychologists.map((psychologist) => (
+          <ProCards key={psychologist.id} id={psychologist.id} />
+        ))}
+      </ul>
     </>
   );
 }

@@ -3,7 +3,7 @@ import LoginPage from "./pages/login-page.jsx";
 import ChooseProfileSignup from "./pages/choose-profile-signup.jsx";
 import ClientSignupPage from "./pages/client-signup-page.jsx";
 import ProSignupPage from "./pages/pro-signup-page.jsx";
-import DashboardPage from "./pages/dashboard-page.jsx";
+import ClientDashboardPage from "./pages/client-dashboard-page.jsx";
 import ProfilePage from "./pages/profile-page.jsx";
 
 function isLoggedIn() {
@@ -36,7 +36,7 @@ export default function App() {
             path="/dashboard"
             element={
               isLoggedIn() ? (
-                <DashboardPage />
+                <ClientDashboardPage />
               ) : (
                 <Navigate to="/login" replace />
               )

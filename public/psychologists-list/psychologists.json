@@ -1,21 +1,22 @@
 [
   {
+    "id": "angela1",
     "name": "Angela Martinez",
-    "especialidade": ["Cognitivo Comportamental", "Terapia de Casal"]
+    "specialty": ["Cognitivo Comportamental", "Terapia de Casal"]
   },
   {
+    "id": "bruno1",
     "name": "Bruno Silva",
-    "especialidade": ["Psicologia Infantil", "Terapia Familiar"]
+    "specialty": ["Psicologia Infantil", "Terapia Familiar"]
   },
   {
+    "id": "camila1",
     "name": "Camila Souza",
-    "especialidade": [
-      "Psicologia Educacional",
-      "Terapia Cognitivo Comportamental"
-    ]
+    "specialty": ["Psicologia Educacional", "Terapia Cognitivo Comportamental"]
   },
   {
+    "id": "daniel1",
     "name": "Daniela Costa",
-    "especialidade": ["Psicologia Organizacional", "Coaching"]
+    "specialty": ["Psicologia Organizacional", "Coaching"]
   }
 ]
