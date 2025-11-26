@@ -1,6 +1,6 @@
 import Navbar from "../features/Navbar/navbar.jsx";
 import { useState, useEffect } from "react";
-import ProCards from "../features/Card/pro-cards.jsx";
+import ProCard from "../features/Card/pro-card.jsx";
 
 export default function ClientDashboardPage() {
   const [psychologists, setPsychologists] = useState([]);
@@ -39,11 +39,11 @@ export default function ClientDashboardPage() {
     <>
       <Navbar visibleLinks={["Login", "Profile"]} />
       <h2>Dashboard</h2>
-      <ul>
+      <div style={{ display: "grid", gap: "20px" }}>
         {psychologists.map((psychologist) => (
-          <ProCards key={psychologist.id} id={psychologist.id} />
+          <ProCard psychologist={psychologist} />
         ))}
-      </ul>
+      </div>
     </>
   );
 }
