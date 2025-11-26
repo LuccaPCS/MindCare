@@ -1,0 +1,6 @@
+[
+  { "id": "hermes1", "name": "Hermes Azevedo", "gender": "M", "age": 30 },
+  { "id": "marcia1", "name": "Marcia Lima", "gender": "F", "age": 42 },
+  { "id": "rodrigo1", "name": "Rodrigo Santos", "gender": "M", "age": 45 },
+  { "id": "maria1", "name": "Maria Pinho", "gender": "F", "age": 18 }
+]

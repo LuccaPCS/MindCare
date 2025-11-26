@@ -7,7 +7,7 @@ import ClientDashboardPage from "./pages/client-dashboard-page.jsx";
 import ProfilePage from "./pages/profile-page.jsx";
 
 function isLoggedIn() {
-  return true;
+  return false;
 }
 
 export default function App() {

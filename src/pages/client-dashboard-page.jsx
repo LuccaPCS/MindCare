@@ -39,7 +39,14 @@ export default function ClientDashboardPage() {
     <>
       <Navbar visibleLinks={["Login", "Profile"]} />
       <h2>Dashboard</h2>
-      <div style={{ display: "grid", gap: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          gap: "20px",
+        }}
+      >
         {psychologists.map((psychologist) => (
           <ProCard psychologist={psychologist} />
         ))}
