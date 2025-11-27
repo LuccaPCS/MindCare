@@ -4,6 +4,7 @@
   border: 1px solid black;
   height: fit-content;
   width: fit-content;
+  max-width: 90vw;
   border-radius: 1rem;
 }
 

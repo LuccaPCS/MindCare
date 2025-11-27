@@ -38,19 +38,38 @@ export default function ClientDashboardPage() {
   return (
     <>
       <Navbar visibleLinks={["Login", "Profile"]} />
-      <h2>Dashboard</h2>
+      <h2 style={{ padding: "1rem" }}>Dashboard</h2>
+      <h3
+        style={{
+          padding: "0 0 1rem 1rem",
+          fontSize: "1.3rem",
+          color: "var(--main-green-dark)",
+        }}
+      >
+        Psicólogos disponíveis
+      </h3>
       <div
         style={{
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
           gap: "20px",
+          padding: "0 0 1rem 1rem",
         }}
       >
         {psychologists.map((psychologist) => (
           <ProCard psychologist={psychologist} />
         ))}
       </div>
+      <h3
+        style={{
+          padding: "0 0 1rem 1rem",
+          fontSize: "1.3rem",
+          color: "var(--main-green-dark)",
+        }}
+      >
+        Minhas consultas
+      </h3>
     </>
   );
 }
