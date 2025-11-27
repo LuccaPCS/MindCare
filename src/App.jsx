@@ -4,13 +4,15 @@ import ChooseProfileSignup from "./pages/choose-profile-signup.jsx";
 import ClientSignupPage from "./pages/client-signup-page.jsx";
 import ProSignupPage from "./pages/pro-signup-page.jsx";
 import ClientDashboardPage from "./pages/client-dashboard-page.jsx";
-import ProfilePage from "./pages/profile-page.jsx";
+import ProfilePage from "./pages/pro-profile-page.jsx";
 
-function isLoggedIn() {
-  return false;
+function getAuthStatus() {
+  return "client";
 }
 
 export default function App() {
+  const auth = getAuthStatus();
+
   return (
     <>
       <div className="app-container">
@@ -18,8 +20,10 @@ export default function App() {
           <Route
             path="/"
             element={
-              isLoggedIn() ? (
-                <Navigate to="/dashboard" replace />
+              auth === "pro" ? (
+                <Navigate to="/pro-dashboard" replace />
+              ) : auth === "client" ? (
+                <Navigate to="/client-dashboard" replace />
               ) : (
                 <Navigate to="/login" replace />
               )
@@ -35,14 +39,27 @@ export default function App() {
           <Route
             path="/dashboard"
             element={
-              isLoggedIn() ? (
+              auth === "client" ? (
                 <ClientDashboardPage />
+              ) : auth === "pro" ? (
+                <Navigate to="/pro-dashboard" replace />
               ) : (
                 <Navigate to="/login" replace />
               )
             }
           />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              auth === "client" ? (
+                <ProfilePage />
+              ) : auth === "pro" ? (
+                <Navigate to="/pro-profile" replace />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
         </Routes>
       </div>
     </>

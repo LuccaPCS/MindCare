@@ -2,7 +2,6 @@ import { useState } from "react";
 import CommonFieldsForm from "../features/Form/common-fields-form.jsx";
 import ClientForm from "../features/Form/client-form.jsx";
 import styles from "../features/Form/form.module.css";
-import Navbar from "../features/Navbar/navbar.jsx";
 
 export default function ClientSignupPage() {
   const [formData, setFormData] = useState({
@@ -10,7 +9,7 @@ export default function ClientSignupPage() {
     email: "",
     password: "",
     confirmPassword: "",
-    preferencias: "",
+    preferences: "",
   });
 
   const handleChange = (e) => {
