@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
 import LoginPage from "./pages/login-page.jsx";
 import ChooseProfileSignup from "./pages/choose-profile-signup.jsx";
 import ClientSignupPage from "./pages/client-signup-page.jsx";
@@ -7,25 +8,21 @@ import ClientDashboardPage from "./pages/client-dashboard-page.jsx";
 import ProDashboardPage from "./pages/pro-dashboard-page.jsx";
 import ClientProfilePage from "./pages/client-profile-page.jsx";
 import ProProfilePage from "./pages/pro-profile-page.jsx";
-
-// Função que simula estado de autenticação:
-// Retorna "pro", "client" ou "none"
-function getAuthStatus() {
-  return "client";
-}
+import UserProvider from "./contexts/UserProvider.jsx";
+import UserContext from "./contexts/UserContext.jsx";
 
 export default function App() {
-  const auth = getAuthStatus();
-
+  const { authenticatedUser } = useContext(UserContext);
+  console.log("App authenticatedUser:", authenticatedUser);
   return (
-    <>
+    <UserProvider>
       <div className="app-container">
         <Routes>
           {/* Homepage (depende do estado de autenticação)*/}
           <Route
             path="/"
             element={
-              auth === "pro" || auth === "client" ? (
+              authenticatedUser ? (
                 <Navigate to="/dashboard" replace />
               ) : (
                 <Navigate to="/login" replace />
@@ -36,9 +33,9 @@ export default function App() {
           <Route
             path="/dashboard"
             element={
-              auth === "client" ? (
+              authenticatedUser?.profile === "client" ? (
                 <ClientDashboardPage />
-              ) : auth === "pro" ? (
+              ) : authenticatedUser?.profile === "pro" ? (
                 <Navigate to="/pro-dashboard" replace />
               ) : (
                 <Navigate to="/login" replace />
@@ -49,9 +46,9 @@ export default function App() {
           <Route
             path="/profile"
             element={
-              auth === "client" ? (
+              authenticatedUser?.profile === "client" ? (
                 <ClientProfilePage />
-              ) : auth === "pro" ? (
+              ) : authenticatedUser?.profile === "pro" ? (
                 <Navigate to="/pro-profile" replace />
               ) : (
                 <Navigate to="/login" replace />
@@ -68,8 +65,9 @@ export default function App() {
           <Route path="/pro-signup" element={<ProSignupPage />} />
           <Route path="/pro-dashboard" element={<ProDashboardPage />} />
           <Route path="/pro-profile" element={<ProProfilePage />} />
+          <Route path="/client-dashboard" element={<ClientDashboardPage />} />
         </Routes>
       </div>
-    </>
+    </UserProvider>
   );
 }

@@ -1,4 +1,5 @@
 import Navbar from "../features/Navbar/navbar.jsx";
+import ClientCard from "../features/Card/client-card.jsx";
 
 export default function ProDashboardPage() {
   return (

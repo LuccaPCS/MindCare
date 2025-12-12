@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import CentralBox from "../features/CentralBox/centralbox";
+import UserContext from "../contexts/UserContext.jsx";
 
 export default function LoginPage() {
-  const [inputEmail, setInputEmail] = useState("usuarioteste");
-  const [inputPassword, setInputPassword] = useState("123456");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputPassword, setInputPassword] = useState("1234");
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  const { setAuthenticatedUser } = useContext(UserContext);
 
   const onChangeEmail = (e) => {
     setInputEmail(e.target.value);
@@ -18,27 +21,43 @@ export default function LoginPage() {
   };
 
   async function handleLogin() {
-    console.log("Tentando logar com: ", inputEmail, inputPassword);
+    console.log("Tentando logar com:", inputEmail, inputPassword);
     setLoading(true);
     setError(null);
+
     try {
-      const response = await fetch(`/users/${inputEmail}.json`);
+      const userFileName = inputEmail.replace("@example.com", "");
+      const response = await fetch(`/users/${userFileName}.json`);
+
       if (!response.ok) {
         setError("Usuário não encontrado.");
+        setLoading(false);
         return;
       }
+
       const userData = await response.json();
+
       if (!userData || inputPassword !== userData.password) {
         const msg = userData
           ? "Usuário e senha não conferem."
           : "Usuário não encontrado.";
         setError(msg);
+        setLoading(false);
         return;
       }
-      setError(null);
-      navigate("/dashboard");
-    } catch {
-      setError("Usuário não encontrado.");
+
+      setAuthenticatedUser(userData);
+      console.log("Login userData:", userData);
+      if (userData.profile === "client") {
+        navigate("/client-dashboard");
+      } else if (userData.profile === "pro") {
+        navigate("/pro-dashboard");
+      } else {
+        setError("Perfil de usuário inválido.");
+      }
+    } catch (error) {
+      console.error("Erro ao autenticar:", error);
+      setError("Erro ao autenticar. Tente novamente mais tarde.");
     } finally {
       setLoading(false);
     }

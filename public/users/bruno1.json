@@ -1,0 +1,11 @@
+{
+  "profile": "pro",
+  "id": "bruno1",
+  "name": "Bruno Silva",
+  "email": "bruno@example.com",
+  "password": "1234",
+  "specialty": ["Psicologia Infantil", "Terapia Familiar"],
+  "experience": "Doutorado em Psicologia do Desenvolvimento pela Universidade Federal do Rio de Janeiro",
+  "introduction": "Olá! Sou Bruno Silva, psicólogo especializado em desenvolvimento infantil e terapia familiar. Tenho 8 anos de experiência ajudando crianças e famílias a enfrentarem desafios emocionais e promoverem um ambiente saudável e harmonioso.",
+  "preferences": null
+}

@@ -1,0 +1,11 @@
+{
+  "profile": "client",
+  "id": "maria1",
+  "name": "Maria Oliveira",
+  "email": "maria@example.com",
+  "password": "1234",
+  "specialty": [],
+  "experience": null,
+  "introduction": null,
+  "preferences": "Procuro um profissional especializado em terapia familiar."
+}

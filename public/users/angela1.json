@@ -1,0 +1,11 @@
+{
+  "profile": "pro",
+  "id": "angela1",
+  "name": "Angela Martinez",
+  "email": "angela1@example.com",
+  "password": "1234",
+  "specialty": ["Cognitivo Comportamental", "Terapia de Casal"],
+  "experience": "Mestrado em Psicologia Clínica pela Universidade de São Paulo",
+  "introduction": "Olá! Sou Angela Martinez, psicóloga com 10 anos de experiência em ajudar pessoas a superarem desafios emocionais e melhorarem suas relações interpessoais. Minha abordagem é centrada no indivíduo, buscando sempre o melhor caminho para o bem-estar mental.",
+  "preferences": null
+}

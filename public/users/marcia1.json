@@ -1,0 +1,11 @@
+{
+  "profile": "client",
+  "id": "marcia1",
+  "name": "Marcia Oliveira",
+  "email": "marcia@example.com",
+  "password": "1234",
+  "specialty": [],
+  "experience": null,
+  "introduction": null,
+  "preferences": "Procuro terapia focada em ansiedade e estresse, preferencialmente com abordagem Cognitivo Comportamental."
+}

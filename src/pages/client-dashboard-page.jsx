@@ -1,34 +1,29 @@
 import Navbar from "../features/Navbar/navbar.jsx";
-import { useState, useEffect } from "react";
 import ProCard from "../features/Card/pro-card.jsx";
+import { useContext, useEffect } from "react";
+import UserContext from "../contexts/UserContext.jsx";
 
 export default function ClientDashboardPage() {
-  const [psychologists, setPsychologists] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const {
+    error,
+    usersList,
+    isLoading,
+    filteredUsersList,
+    filterUsersList,
+    handleSelectUser,
+    selectedUser,
+    selectedDetails,
+  } = useContext(UserContext);
 
   useEffect(() => {
-    async function fetchPsychologists() {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await fetch("/psychologists-list/psychologists.json");
-        if (!response.ok) {
-          throw new Error("Falha ao carregar a lista de psicólogos.");
-        }
-        const data = await response.json();
-        setPsychologists(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
+    if (filteredUsersList.length === 0 && usersList.length > 0) {
+      console.log("Chamando filterUsersList no ClientDashboardPage");
+      filterUsersList("pro");
     }
-    fetchPsychologists();
-  }, []);
+  }, [filterUsersList, usersList, filteredUsersList]);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error}</div>;
   }
 
   if (isLoading) {
@@ -57,8 +52,15 @@ export default function ClientDashboardPage() {
           padding: "0 0 1rem 1rem",
         }}
       >
-        {psychologists.map((psychologist) => (
-          <ProCard psychologist={psychologist} />
+        {console.log("Filtered Users List:", filteredUsersList)}
+        {filteredUsersList.map((psychologist) => (
+          <ProCard
+            key={psychologist.id}
+            psychologist={psychologist}
+            handleClick={handleSelectUser}
+            isSelected={selectedUser === psychologist.id}
+            details={selectedUser === psychologist.id ? selectedDetails : null}
+          />
         ))}
       </div>
       <h3

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "hermes1",
+    "profile": "client",
+    "name": "Hermes Azevedo",
+    "gender": "M",
+    "age": 30
+  },
+  {
+    "id": "marcia1",
+    "profile": "client",
+    "name": "Marcia Lima",
+    "gender": "F",
+    "age": 42
+  },
+  {
+    "id": "rodrigo1",
+    "profile": "client",
+    "name": "Rodrigo Santos",
+    "gender": "M",
+    "age": 45
+  },
+  {
+    "id": "maria1",
+    "profile": "client",
+    "name": "Maria Pinho",
+    "gender": "F",
+    "age": 18
+  },
+  {
+    "id": "angela1",
+    "profile": "pro",
+    "name": "Angela Martinez",
+    "specialty": ["Cognitivo Comportamental", "Terapia de Casal"]
+  },
+  {
+    "id": "bruno1",
+    "profile": "pro",
+    "name": "Bruno Silva",
+    "specialty": ["Psicologia Infantil", "Terapia Familiar"]
+  },
+  {
+    "id": "camila1",
+    "profile": "pro",
+    "name": "Camila Souza",
+    "specialty": ["Psicologia Educacional", "Terapia Cognitivo Comportamental"]
+  },
+  {
+    "id": "daniel1",
+    "profile": "pro",
+    "name": "Daniel Oliveira",
+    "specialty": ["Psicologia Organizacional", "Coaching"]
+  }
+]

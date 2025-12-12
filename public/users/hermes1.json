@@ -1,0 +1,11 @@
+{
+  "profile": "client",
+  "id": "hermes1",
+  "name": "Hermes Silva",
+  "email": "hermes@example.com",
+  "password": "1234",
+  "specialty": [],
+  "experience": null,
+  "introduction": null,
+  "preferences": "Procuro terapia focada em depressão e autoestima, preferencialmente com abordagem Humanista."
+}

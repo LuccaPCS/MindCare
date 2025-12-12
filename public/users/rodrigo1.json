@@ -1,0 +1,11 @@
+{
+  "profile": "client",
+  "id": "rodrigo1",
+  "name": "Rodrigo Silva",
+  "email": "rodrigo@example.com",
+  "password": "1234",
+  "specialty": [],
+  "experience": null,
+  "introduction": null,
+  "preferences": "Preciso parar de beber."
+}
