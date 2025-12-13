@@ -7,7 +7,6 @@ Para rodar o projeto localmente:
 3. Rodar o comando bash `npm run dev` para compilar e hospedar a aplicação em um servidor local.
 4. Abrir o endereço do localhost (ex.: http://localhost:5173/) no navegador.
 
-Entregas:
-- [TP1](/TPs/TP1.md)
+A entrega do AT (projeto final) está na branch "AT"!!!
 
 
