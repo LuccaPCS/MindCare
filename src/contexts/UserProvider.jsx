@@ -85,7 +85,7 @@ function UserProvider({ children }) {
           throw new Error("Falha ao carregar a lista de usuários.");
         }
         const data = await response.json();
-        console.log("Dados carregados:", data); // Log para verificar os dados carregados
+        console.log("Dados carregados:", data);
         dispatch({ type: "SET_USERS_LIST", payload: data });
       } catch (error) {
         dispatch({ type: "SET_ERROR", payload: error.message });
@@ -96,15 +96,6 @@ function UserProvider({ children }) {
     fetchUsers();
   }, []);
 
-  useEffect(() => {
-    // Log de alteração de usuário autenticado
-    console.log("authenticatedUser atualizado:", state.authenticatedUser);
-  }, [state.authenticatedUser]);
-
-  useEffect(() => {
-    console.log("filteredUsersList atualizado:", state.filteredUsersList);
-  }, [state.filteredUsersList]);
-
   const contextValue = useMemo(
     () => ({
       ...state,
@@ -113,11 +104,11 @@ function UserProvider({ children }) {
         dispatch({ type: "SET_USERS_LIST", payload: list }),
       filterUsersList: (profile) => {
         console.log("Chamando filterUsersList com profile:", profile);
-        console.log("usersList atual:", state.usersList); // Verificar se usersList está preenchido
+        console.log("usersList atual:", state.usersList);
         const filtered = state.usersList.filter(
           (user) => user.profile === profile
         );
-        console.log("Resultado do filtro:", filtered); // Verificar o resultado do filtro
+        console.log("Resultado do filtro:", filtered);
         dispatch({ type: "FILTER_USERS_LIST", payload: filtered });
       },
       setAuthenticatedUser: (user) => {

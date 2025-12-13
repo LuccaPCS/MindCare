@@ -5,7 +5,7 @@ export default function ProDashboardPage() {
   return (
     <>
       <Navbar visibleLinks={["Login", "Profile"]} />
-      <h2 style={{ padding: "1rem" }}>Dashboard</h2>
+      <h2 style={{ padding: "1rem" }}>Dashboard do Psicólogo</h2>
       <h3
         style={{
           padding: "0 0 1rem 1rem",

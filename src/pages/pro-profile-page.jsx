@@ -4,7 +4,7 @@ export default function ProProfilePage() {
   return (
     <>
       <Navbar visibleLinks={["Login", "Dashboard"]} />
-      <h2 style={{ padding: "1rem" }}>Perfil</h2>
+      <h2 style={{ padding: "1rem" }}>Perfil do Profissional</h2>
     </>
   );
 }

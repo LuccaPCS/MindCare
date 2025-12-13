@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext.jsx";
 import styles from "./navbar.module.css";
 
 export default function Navbar({ visibleLinks = [] }) {
+  const { authenticatedUser } = useContext(UserContext);
+
   const NAV_LINKS = [
     { name: "Home", path: "/" },
     { name: "Login", path: "/login" },
@@ -9,7 +13,13 @@ export default function Navbar({ visibleLinks = [] }) {
     { name: "Client Signup", path: "/client-signup" },
     { name: "Pro Signup", path: "/pro-signup" },
     { name: "Dashboard", path: "/dashboard" },
-    { name: "Profile", path: "/profile" },
+    {
+      name: "Profile",
+      path:
+        authenticatedUser?.profile === "pro"
+          ? "/pro-profile"
+          : "/client-profile",
+    },
   ];
 
   const filteredLinks = NAV_LINKS.filter((link) =>

@@ -63,9 +63,10 @@ export default function App() {
           />
           <Route path="/client-signup" element={<ClientSignupPage />} />
           <Route path="/pro-signup" element={<ProSignupPage />} />
-          <Route path="/pro-dashboard" element={<ProDashboardPage />} />
-          <Route path="/pro-profile" element={<ProProfilePage />} />
           <Route path="/client-dashboard" element={<ClientDashboardPage />} />
+          <Route path="/pro-dashboard" element={<ProDashboardPage />} />
+          <Route path="/client-profile" element={<ClientProfilePage />} />
+          <Route path="/pro-profile" element={<ProProfilePage />} />
         </Routes>
       </div>
     </UserProvider>

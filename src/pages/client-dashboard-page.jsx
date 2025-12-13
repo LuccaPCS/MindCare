@@ -17,7 +17,6 @@ export default function ClientDashboardPage() {
 
   useEffect(() => {
     if (filteredUsersList.length === 0 && usersList.length > 0) {
-      console.log("Chamando filterUsersList no ClientDashboardPage");
       filterUsersList("pro");
     }
   }, [filterUsersList, usersList, filteredUsersList]);
@@ -33,7 +32,7 @@ export default function ClientDashboardPage() {
   return (
     <>
       <Navbar visibleLinks={["Login", "Profile"]} />
-      <h2 style={{ padding: "1rem" }}>Dashboard</h2>
+      <h2 style={{ padding: "1rem" }}>Dashboard do Cliente</h2>
       <h3
         style={{
           padding: "0 0 1rem 1rem",

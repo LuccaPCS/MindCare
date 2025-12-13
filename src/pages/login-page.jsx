@@ -5,7 +5,7 @@ import UserContext from "../contexts/UserContext.jsx";
 
 export default function LoginPage() {
   const [inputEmail, setInputEmail] = useState("");
-  const [inputPassword, setInputPassword] = useState("1234");
+  const [inputPassword, setInputPassword] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
