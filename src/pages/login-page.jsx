@@ -92,7 +92,11 @@ export default function LoginPage() {
           </button>
 
           {isLoading && <div>Verificando credenciais...</div>}
-          {error && <div style={{ color: "red" }}>{error}</div>}
+          {error && (
+            <div className="error-message" style={{ color: "red" }}>
+              {error}
+            </div>
+          )}
 
           <p>
             Ainda não registrado?{" "}

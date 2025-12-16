@@ -1,7 +1,7 @@
 /* CSS RESET */
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 *,
@@ -75,9 +75,9 @@ a {
   min-height: 100vh;
 }
 
-/* Smartphones */
-@media all and (max-width: 480px) {
+/* Desktop */
+@media all and (min-width: 800px) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }

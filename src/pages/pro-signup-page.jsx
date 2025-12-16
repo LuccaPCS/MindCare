@@ -2,7 +2,6 @@ import { useState } from "react";
 import CommonFieldsForm from "../features/Form/common-fields-form.jsx";
 import ProForm from "../features/Form/pro-form.jsx";
 import styles from "../features/Form/form.module.css";
-import Navbar from "../features/Navbar/navbar.jsx";
 
 export default function ProSignupPage() {
   const [formData, setFormData] = useState({

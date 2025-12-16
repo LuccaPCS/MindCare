@@ -1,16 +1,30 @@
+/* eslint-disable no-undef */
+// eslint-env cypress
 /// <reference types="cypress" />
 
 describe("Autenticação", () => {
   it("Deve fazer login com sucesso", () => {
-    cy.visit("http://192.168.61.17:5173/login");
+    cy.visit("http://localhost:5173/login");
 
-    cy.get('input[name="email"]').type("angela1@example.com");
-    cy.get('input[name="password"]').type("1234");
+    cy.get('input[placeholder="Email"]').type("angela1@example.com");
+    cy.get('input[placeholder="Senha"]').type("1234");
 
-    cy.get("button", "Login").click();
+    cy.contains("button", "Login").click();
 
-    // cy.url().should("include", "/clientdashboard");
+    cy.get("h2").should("have.text", "Dashboard do Psicólogo");
+  });
 
-    cy.get("h2").should("have.text", "Dashboard");
+  it("Deve exibir erro para usuário inválido", () => {
+    cy.visit("http://localhost:5173/login");
+
+    cy.get('input[placeholder="Email"]').type("angela1@example.com");
+    cy.get('input[placeholder="Senha"]').type("12345");
+
+    cy.contains("button", "Login").click();
+
+    cy.get("div.error-message").should(
+      "have.text",
+      "Usuário e senha não conferem."
+    );
   });
 });
